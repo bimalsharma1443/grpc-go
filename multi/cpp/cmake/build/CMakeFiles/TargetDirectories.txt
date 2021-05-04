@@ -1,0 +1,5 @@
+/root/go/src/multi/cpp/cmake/build/CMakeFiles/rebuild_cache.dir
+/root/go/src/multi/cpp/cmake/build/CMakeFiles/edit_cache.dir
+/root/go/src/multi/cpp/cmake/build/CMakeFiles/server.dir
+/root/go/src/multi/cpp/cmake/build/CMakeFiles/client.dir
+/root/go/src/multi/cpp/cmake/build/CMakeFiles/hw_grpc_proto.dir

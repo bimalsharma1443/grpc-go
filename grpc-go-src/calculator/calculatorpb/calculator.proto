@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "calculator/calculatorpb";
+
+message CalculatorRequest {
+    int32 first_number = 1;
+    int32 second_number = 2;
+}
+
+message CalculatorResponse {
+    int32 sum = 1;
+}
+
+message PrimeNumberDecompositionRequest {
+    int64 number = 1;
+}
+
+message PrimeNumberDecompositionResponse {
+    int64 Devisior = 1;
+}
+
+message ComputeAverageRequest {
+    int32 number = 1;
+}
+
+message ComputeAverageResponse {
+    float Average = 1;
+}
+
+message FindMaximumRequest {
+    int32 number = 1;
+}
+
+message FindMaximumResponse {
+    int32 max = 1;
+}
+
+message SqaurRootRequest {
+    int32 number = 1;
+}
+
+message SqaurRootResponse {
+    double squar_root = 1;
+}
+
+
+
+service CalculatorService{
+    //unary
+    rpc Calculator(CalculatorRequest) returns (CalculatorResponse) {};
+
+    // server streaming
+    rpc PrimeNumberDecomposition(PrimeNumberDecompositionRequest) returns (stream PrimeNumberDecompositionResponse) {};
+
+    // client streaming
+    rpc ComputeAverage(stream ComputeAverageRequest) returns (ComputeAverageResponse) {};
+
+    // bidi streaming
+    rpc FindMaximum(stream FindMaximumRequest) returns (stream FindMaximumResponse) {};
+
+    // grpc error handling
+    rpc SqaurRoot(SqaurRootRequest) returns (SqaurRootResponse) {};
+
+}

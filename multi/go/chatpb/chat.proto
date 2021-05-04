@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package chat;
+
+option go_package="go/chatpb";
+
+// Defines the service
+service Chat {
+    // Function invoked to send the request
+    rpc sendRequest (ChatRequest) returns (ChatReply) {};
+}
+
+// The request message containing requested numbers
+message ChatRequest {
+    string message = 1;
+}
+
+// The response message containing response
+message ChatReply {
+    string reply = 1;
+}

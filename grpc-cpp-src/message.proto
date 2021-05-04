@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "ex.grpc";
+
+package message;
+
+// Defines the service
+service Message {
+    // Function invoked to send the request
+    rpc sendRequest (MessageRequest) returns (MessageReply) {}
+}
+
+// The request message containing requested numbers
+message MessageRequest {
+    string message = 1;
+}
+
+// The response message containing response
+message MessageReply {
+    string result = 1;
+}
